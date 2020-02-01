@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <section>
+        @if(ViewData["userList"] != null)
+        {
+            foreach (var user in (List<IdentityUser>)ViewData["userList"])
+            {
+                <div>@user.UserName</div>
+            }
+        }
+        else
+        {
+            <p>No Users Found.</p>
+        }
+    </section>
+</div>
